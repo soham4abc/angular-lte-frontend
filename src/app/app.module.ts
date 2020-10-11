@@ -21,7 +21,7 @@ import { TitleCasePipe } from '@angular/common';
 
 import { KeyboardShortcutsModule, KeyboardShortcutsService } from 'ng-keyboard-shortcuts';
 import { UserService } from './core/services/user.service';
-import { EmployeeService } from './core/services/employee.service';
+import { EmployeeService } from './core/services/employees.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AppService } from './app.service';

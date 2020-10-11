@@ -12,6 +12,7 @@ import { BlockUIHttpModule } from 'ng-block-ui/http';
 import { BlockUIModule } from 'ng-block-ui';
 import { CategoryComponent } from './category/category.component';
 
+
 const routes: Routes = [
     // { path: '', redirectTo: '/layout', pathMatch: 'full', data: { title: 'Layout' } },
     {
@@ -21,7 +22,8 @@ const routes: Routes = [
                 { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
                 { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
                 { path: 'employees', loadChildren: './employees/employees.module#EmployeeModule' },
-                { path: 'profile', loadChildren: './profile/profile.module#ProfileModule' }
+                { path: 'profile', loadChildren: './profile/profile.module#ProfileModule' },
+                { path: 'categorymanagement', loadChildren: './maincategory/maincategory.module#MaincategoryModule' }
             ]
     },
     {
