@@ -46,7 +46,7 @@ export class UserProfileComponent implements OnInit, OnDestroy {
     private fb: FormBuilder,
     private commonService: CommonService,
     private userService: UserService,
-    private employeeService: EmployeeService,
+    private employeeService: MaincategoryService,
     private toastrService: ToastrService,
     private sessionService: SessionService
   ) {
