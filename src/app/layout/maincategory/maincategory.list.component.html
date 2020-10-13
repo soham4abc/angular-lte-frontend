@@ -1,88 +1,112 @@
 <section class="content-header">
-    <h1>Category</h1>
-    <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Categories</li>
-    </ol>
+  <h1>Category</h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="active">Categories</li>
+  </ol>
 </section>
 <section class="content">
-    <div class="box box-success">
-        <div class="box-header with-border">
+  <div class="box box-success">
+    <div class="box-header with-border">
 
-            <!-- <button (click)="getSelectedRows()">Get Selected Rows</button> -->
-        </div>
-        <div class="box-body">
-            <!-- [pagination]="true" [paginationPageSize]="10" -->
-            <!DOCTYPE html>
-            <html>
-
-            <head>
-                <style>
-                    table {
-                        font-family: arial, sans-serif;
-                        border-collapse: collapse;
-                        width: 100%;
-                    }
-
-                    td,
-                    th {
-                        border: 1px solid #dddddd;
-                        text-align: left;
-                        padding: 8px;
-                    }
-
-                    tr:nth-child(even) {
-                        background-color: #dddddd;
-                    }
-                </style>
-            </head>
-
-            <body>
-
-                <h2>Categories list</h2>
-
-                <table>
-                    <tr>
-                        <th>Company</th>
-                        <th>Contact</th>
-                        <th>Country</th>
-                    </tr>
-                    <tr>
-                        <td>Alfreds Futterkiste</td>
-                        <td>Maria Anders</td>
-                        <td>Germany</td>
-                    </tr>
-                    <tr>
-                        <td>Centro comercial Moctezuma</td>
-                        <td>Francisco Chang</td>
-                        <td>Mexico</td>
-                    </tr>
-                    <tr>
-                        <td>Ernst Handel</td>
-                        <td>Roland Mendel</td>
-                        <td>Austria</td>
-                    </tr>
-                    <tr>
-                        <td>Island Trading</td>
-                        <td>Helen Bennett</td>
-                        <td>UK</td>
-                    </tr>
-                    <tr>
-                        <td>Laughing Bacchus Winecellars</td>
-                        <td>Yoshi Tannamuri</td>
-                        <td>Canada</td>
-                    </tr>
-                    <tr>
-                        <td>Magazzini Alimentari Riuniti</td>
-                        <td>Giovanni Rovelli</td>
-                        <td>Italy</td>
-                    </tr>
-                </table>
-
-            </body>
-
-            </html>
-
-        </div>
+      <!-- <button (click)="getSelectedRows()">Get Selected Rows</button> -->
     </div>
+    <div class="box-body">
+      <!-- [pagination]="true" [paginationPageSize]="10" -->
+      <!DOCTYPE html>
+      <html>
+
+      <head>
+        <style>
+          table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+          }
+
+          td,
+          th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+          }
+
+          tr:nth-child(even) {
+            background-color: #dddddd;
+          }
+        </style>
+      </head>
+
+      <body>
+
+        <h2>Categories list</h2>
+
+        <table>
+          <tr>
+            <th>Category</th>
+            <th>Category_SKU</th>
+          </tr>
+          <tr>
+            <td>Row1 cell1</td>
+            <td>Row1 cell2</td>
+          </tr>
+          <tr>
+            <td>Row2 cell1</td>
+            <td>Row2 cell2</td>
+          </tr>
+          <tr>
+            <td>Row3 cell1</td>
+            <td>Row3 cell2</td>
+          </tr>
+        </table>
+
+        <h2>Add Categories</h2>
+        <section class="container border mb-4 p-3" *ngFor="let category of categories; let i = index;">
+          <div class="">
+            <br>
+
+            <br>
+            <h3> Category number : {{i+ 1}}:- </h3>
+          </div>
+          <div class="col-6 text-center">
+            <button type="button" class="btn btn-danger btn-sm" (click)="removeCategory(i)">Remove</button>
+          </div>
+          <br>
+          <div class="continue-reading">
+            <label>Category name: </label>
+            <input type="text" name="category" placeholder="Enter category name here"><br>
+
+          </div>
+
+          <br>
+          <div class="continue-reading">
+            <label>Category - SKU: </label>
+            <input type="text" name="category_SKU" placeholder="Enter SKU"><br>
+
+          </div>
+          <br>
+
+          <div class="continue-reading">
+            <button type="button" class="btn btn-primary mb-2" (click)="addCategory()">Add Category</button>
+          </div>
+          <br>
+
+
+        </section>
+        <div class="continue-reading">
+          <button type="button" class="btn btn-success" (click)="logValue()">Submit</button>
+        </div>
+
+
+
+
+
+
+
+      </body>
+
+      </html>
+
+    </div>
+  </div>
 </section>

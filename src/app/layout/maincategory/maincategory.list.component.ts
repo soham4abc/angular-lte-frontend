@@ -6,13 +6,36 @@ import { MaincategoryService } from 'src/app/core/services/maincategory.service'
 import { ToastrService } from 'ngx-toastr';
 import { Constants } from 'src/app/core/constants';
 import { resetCompiledComponents } from '@angular/core/src/render3/jit/module';
+import { FormGroup, FormBuilder, Validators, FormControl, FormArray, NgForm } from '@angular/forms'
+import {ReactiveFormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
     selector: 'app-maincategory-list',
     templateUrl: 'maincategory.list.component.html'
+    
 })
 
 export class MaincategoryListComponent implements OnInit {
+
+    addForm: FormGroup;
+    rows: FormArray;
+    itemForm: FormGroup;
+   public id:1
+   public category:any
+   public category_SKU:any
+   public submitPayload: any = [];
+   
+    public categories: any[] = [{
+        id: 1,
+        category: '',
+       category_SKU: '',
+       
+      }];
+
+    
+    
 
     @ViewChild('agGrid') agGrid: AgGridNg2;
     public context = {};
@@ -23,7 +46,7 @@ export class MaincategoryListComponent implements OnInit {
         { headerName: 'maincategory Name', field: 'fullName' },
         { headerName: 'Email ID', field: 'email' },
         { headerName: 'Mobile Number', field: 'mobileNumber' },
-        { headerName: 'Address', field: 'address' },
+        { headerName: 'Category', field: 'category' },
         {
             headerName: 'Action', field: 'name',
             cellRendererFramework: ActionParentComponent,
@@ -31,14 +54,57 @@ export class MaincategoryListComponent implements OnInit {
     ];
 
     rowData: any;
+
+    
+    
     constructor(private maincategoryService: MaincategoryService,
-        private toastrService: ToastrService) {
+        private toastrService: ToastrService,
+        private fb: FormBuilder) {
+            
+        this.addForm = this.fb.group({
+        items: [null, Validators.required],
+        items_value: ['no', Validators.required]
+      });
+        this.rows = this.fb.array([]);
+
         this.context = { componentParent: this };
     }
 
     ngOnInit() {
         this.getmaincategoryList();
+        this.addForm.get("items").valueChanges.subscribe(val => {
+            if (val === true) {
+              this.addForm.get("items_value").setValue("yes");
+      
+              this.addForm.addControl('rows', this.rows);
+            }
+            if (val === false) {
+              this.addForm.get("items_value").setValue("no");
+              this.addForm.removeControl('rows');
+            }
+        });
     }
+
+    addCategory() {
+        this.categories.push({
+          id: this.categories.length + 1,
+          category: '',
+          category_SKU: '',         
+        });
+      }
+    
+      removeCategory(i: number) {
+        this.categories.splice(i, 1);
+      }
+
+      logValue() {
+        console.log(this.categories);
+      }
+
+      
+   
+
+
 
     public getmaincategoryList() {
         this.maincategoryService.getmaincategoryList()
@@ -51,6 +117,9 @@ export class MaincategoryListComponent implements OnInit {
                 this.toastrService.error(error.error.message, Constants.TITLE_ERROR);
             });
     }
+
+
+   
 
     onGridReady(data) {
     }
