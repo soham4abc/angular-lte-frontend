@@ -23,7 +23,8 @@ const routes: Routes = [
                 { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
                 { path: 'employees', loadChildren: './employees/employees.module#EmployeeModule' },
                 { path: 'profile', loadChildren: './profile/profile.module#ProfileModule' },
-                { path: 'categorymanagement', loadChildren: './maincategory/maincategory.module#MaincategoryModule' }
+                { path: 'categorymanagement', loadChildren: './maincategory/maincategory.module#MaincategoryModule' },
+                { path: 'addcategory', loadChildren: './addcategory/addcategory.module#AddcategoryModule' }
             ]
     },
     {
