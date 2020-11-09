@@ -9,6 +9,7 @@ import { resetCompiledComponents } from '@angular/core/src/render3/jit/module';
 import { FormGroup, FormBuilder, Validators, FormControl, FormArray, NgForm } from '@angular/forms'
 import {ReactiveFormsModule } from '@angular/forms'
 import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule, Router } from '@angular/router';
 
 
 @Component({
@@ -57,9 +58,12 @@ export class MaincategoryListComponent implements OnInit {
 
     
     
-    constructor(private maincategoryService: MaincategoryService,
-        private toastrService: ToastrService,
-        private fb: FormBuilder) {
+    constructor(
+            private maincategoryService: MaincategoryService,
+            private toastrService: ToastrService,
+            private fb: FormBuilder,
+            public router: Router
+        ) {
             
         this.addForm = this.fb.group({
         items: [null, Validators.required],
@@ -83,6 +87,12 @@ export class MaincategoryListComponent implements OnInit {
               this.addForm.removeControl('rows');
             }
         });
+    }
+
+    routeNew() {
+        console.log('test');
+        window.location.href = '/layout/addcategory';
+        // this.router.navigateByUrl('/layout/employees');
     }
 
     addCategory() {

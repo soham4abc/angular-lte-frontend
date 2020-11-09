@@ -14,4 +14,9 @@ export class SidebarComponent implements OnInit {
         // });
 
     }
+    routeNew() {
+        console.log('test');
+        window.location.href = '/layout/addcategory';
+        // this.router.navigateByUrl('/layout/employees');
+    }
 }
