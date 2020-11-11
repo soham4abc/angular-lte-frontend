@@ -11,33 +11,35 @@
     </div> -->
     <ul class="sidebar-menu" data-widget="tree">
       <li>
-        <a routerLink="/layout/dashboard">
-          <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-        </a>
+        <button (click)="routeDash()">
+          <i class="fa fa-dashboard btn btn-primary"></i> <span>Dashboard</span>
+        </button>
       </li>
       <li>
-        <button (click)="routeNew()">
-          <i class="fa fa-user"></i> <span>Categories</span>
+        <button (click)="routeCat()">
+          <i class="fa fa-user btn btn-primary"></i> <span>Categories</span>
         </button>
       </li>
 
       <li>
-        <a routerLink="/layout/profile/user">
-          <i class="fa fa-user"></i> <span> User Profile</span>
-        </a>
+        <button (click)="routeUser()">
+          <i class="fa fa-user btn btn-primary"></i> <span>User Profile</span>
+        </button>
       </li>
       <li>
-        <a routerLink="/layout/profile/company">
-          <i class="fa fa-share"></i> <span> Company Profile</span>
-        </a>
+        <button (click)="routeCom()">
+          <i class="fa fa-share btn btn-primary"></i> <span>Company Profile</span>
+        </button>
       </li>
 
       <li>
-        <a routerLink="/layout/profile/update-password">
-          <i class="fa fa-lock"></i> <span> Update Password</span>
-        </a>
+        <button (click)="routePswd()">
+          <i class="fa fa-lock btn btn-primary"></i> <span>Update Password</span>
+        </button>
       </li>
-      <li><a routerLink="/login"><i class="fa fa-lock text-aqua"></i> <span>Log Out</span></a></li>
+      <li><button (click)="routeOut()">
+          <i class="fa fa-lock text-aqua btn btn-primary"></i> <span>Log out</span>
+        </button></li>
     </ul>
   </section>
 </aside>
