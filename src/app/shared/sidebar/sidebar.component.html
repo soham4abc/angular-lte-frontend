@@ -10,36 +10,41 @@
       </div>
     </div> -->
     <ul class="sidebar-menu" data-widget="tree">
-      <li>
-        <button (click)="routeDash()">
-          <i class="fa fa-dashboard btn btn-primary"></i> <span>Dashboard</span>
-        </button>
-      </li>
-      <li>
-        <button (click)="routeCat()">
-          <i class="fa fa-user btn btn-primary"></i> <span>Categories</span>
-        </button>
-      </li>
-
-      <li>
-        <button (click)="routeUser()">
-          <i class="fa fa-user btn btn-primary"></i> <span>User Profile</span>
-        </button>
-      </li>
-      <li>
-        <button (click)="routeCom()">
-          <i class="fa fa-share btn btn-primary"></i> <span>Company Profile</span>
-        </button>
-      </li>
-
-      <li>
-        <button (click)="routePswd()">
-          <i class="fa fa-lock btn btn-primary"></i> <span>Update Password</span>
-        </button>
-      </li>
-      <li><button (click)="routeOut()">
-          <i class="fa fa-lock text-aqua btn btn-primary"></i> <span>Log out</span>
-        </button></li>
+      <p align="center">
+        <li>
+          <button (click)="routeDash()">
+            <i class="fa fa-dashboard btn-lg btn-block"><span>Dashboard</span></i>
+          </button>
+        </li>
+        <br>
+        <li>
+          <button (click)="routeCat()">
+            <i class="fa fa-user btn btn-primary btn-block"> <span>Categories</span></i>
+          </button>
+        </li>
+        <br>
+        <li>
+          <button (click)="routeUser()">
+            <i class="fa fa-user btn btn-primary btn-block"> <span>User Profile</span></i>
+          </button>
+        </li>
+        <br>
+        <li>
+          <button (click)="routeCom()">
+            <i class="fa fa-share btn btn-primary btn-block btn-flat"><span>Company Profile</span></i>
+          </button>
+        </li>
+        <br>
+        <li>
+          <button (click)="routePswd()">
+            <i class="fa fa-lock btn btn-primary  "> <span>Update Password</span></i>
+          </button>
+        </li>
+        <br>
+        <li><button (click)="routeOut()">
+            <i class="fa fa-lock text-black btn btn-primary"> <span>Log out</span></i>
+          </button></li>
+      </p>
     </ul>
   </section>
 </aside>
